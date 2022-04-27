@@ -5,7 +5,7 @@
     <title>유사 네이버 시계</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
     <style>
-        .apm {
+        #apm {
             font-family: 나눔스퀘어, "NanumSquare";
             font-weight: 600;
             height: auto;
@@ -35,9 +35,7 @@
             font-size: 25vh;
         }
     </style>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="/jquery.js"></script>
-    <script>
+    <script type="text/javascript">
         function pad(t) {
             return (+t >= 10 ? t + "" : "0" + t)
         }
@@ -46,23 +44,25 @@
             var hr = now.getHours();
             var min = now.getMinutes();
             var sec = now.getSeconds();
-            $("#hr").html(pad(hr%12).replace("00", "12"));
-            $("#min").html(pad(min));
-            $("#sec").html(pad(sec));
 
-            if (hr >= 12) $(".apm").html("오후");
-            else $(".apm").html("오전");
+            document.getElementById("hr").innerHTML = pad(hr%12).replace("00", "12");
+            document.getElementById("min").innerHTML = pad(min);
+            document.getElementById("sec").innerHTML = pad(sec);
 
-            if (sec >= 50) $("#sec").css("color", "red");
-            else $("#sec").css("color", "black");
+            if (hr >= 12) document.getElementById("apm").innerHTML = "오후";
+            else document.getElementById("apm").innerHTML = "오전";
 
-            if (now.getMilliseconds() >= 500) $(".colon").css("color", "rgba(0, 0, 0, 0.5)");
-            else $(".colon").css("color", "rgba(0, 0, 0, 0.3");
+            if (sec >= 50) document.getElementById("sec").style.color = "red";
+            else document.getElementById("sec").style.color = "black";
+            
+            if (now.getMilliseconds() >= 500) document.querySelectorAll(".colon").forEach(item => item.style.color = "rgba(0, 0, 0, 0.7)");
+            else document.querySelectorAll(".colon").forEach(item => item.style.color = "rgba(0, 0, 0, 0.3)");
+            
         }, 25);
     </script>
 </head>
 <body>
-    <div class="apm">오후</div>
+    <div id="apm">오?</div>
     <div class="box" style="display:inline;">
         <span id="hr">00</span><span class="colon">:</span><span id="min">00</span><span class="colon">:</span><span id="sec">00</span>
     </div>
