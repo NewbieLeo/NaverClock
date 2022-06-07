@@ -1,0 +1,49 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+body {
+    background-color: hsl(0, 0, 80);
+}
+
+#apm {
+    font-family: "Pretendard", "NanumSquare";
+    font-weight: 600;
+    height: auto;
+    width: auto;
+    font-size: 5vw;
+    position: absolute;
+    left: 6.5vw;
+    top: 25vh;
+
+}
+
+.box {
+    font-family: "Pretendard", "NanumSquare";
+    font-weight: 700;
+    font-feature-settings: "tnum", "ss06";
+    
+    height: 40vh;
+    font-size: 20vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    letter-spacing: 2px;
+}
+
+.hr24 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 2px;
+}
+
+.colon {
+    font-size: 20vw;
+}
+
+label[for=hr24] {
+    font-family: "Pretendard", "NanumSquare";
+    font-weight: 500;
+    font-size: 16px;
+}

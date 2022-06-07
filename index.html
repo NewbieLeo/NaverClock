@@ -2,69 +2,21 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>유사 네이버 시계</title>
+    <title>현재 시각 - 00:00:00</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
-    <style>
-        #apm {
-            font-family: 나눔스퀘어, "NanumSquare";
-            font-weight: 600;
-            height: auto;
-            width: auto;
-            font-size: 7vh;
-            position: absolute;
-            left: 7.5%;
-            top: 33.3%;
-
-        }
-
-        .box {
-            font-family: 나눔스퀘어, "NanumSquare";
-            font-weight: 600;
-            height: 40vh;
-            width: auto;
-            font-size: 32vh;
-            /* white-space: nowrap; */
-            position: absolute;
-            left: 50%;
-            top: 60%;
-            transform: translate(-50%, -50%);
-            letter-spacing: 5px;
-        }
-
-        .colon {
-            font-size: 25vh;
-        }
-    </style>
-    <script type="text/javascript">
-        function pad(t) {
-            return (+t >= 10 ? t + "" : "0" + t)
-        }
-        setInterval(() => {
-            let now = new Date();
-            var hr = now.getHours();
-            var min = now.getMinutes();
-            var sec = now.getSeconds();
-
-            document.getElementById("hr").innerHTML = pad(hr%12).replace("00", "12");
-            document.getElementById("min").innerHTML = pad(min);
-            document.getElementById("sec").innerHTML = pad(sec);
-
-            if (hr >= 12) document.getElementById("apm").innerHTML = "오후";
-            else document.getElementById("apm").innerHTML = "오전";
-
-            if (sec >= 50) document.getElementById("sec").style.color = "red";
-            else document.getElementById("sec").style.color = "black";
-            
-            if (now.getMilliseconds() >= 500) document.querySelectorAll(".colon").forEach(item => item.style.color = "rgba(0, 0, 0, 0.7)");
-            else document.querySelectorAll(".colon").forEach(item => item.style.color = "rgba(0, 0, 0, 0.3)");
-            
-        }, 25);
-    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer type="text/javascript" src="app.js"></script>
 </head>
 <body>
-    <div id="apm">오?</div>
-    <div class="box" style="display:inline;">
-        <span id="hr">00</span><span class="colon">:</span><span id="min">00</span><span class="colon">:</span><span id="sec">00</span>
+    <div id="all">
+        <div id="apm">오?</div>
+        <div class="box" style="display:flex;">
+            <span id="hr">00</span> 
+            <span class="colon">:</span>
+            <span id="min">00</span>
+            <span class="colon">:</span>
+            <span id="sec">00</span>
+        </div>
     </div>
 </body>
 </html>
