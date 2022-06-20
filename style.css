@@ -47,3 +47,7 @@ label[for=hr24] {
     font-weight: 500;
     font-size: 16px;
 }
+
+*:hover {
+    cursor: none;
+}
