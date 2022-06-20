@@ -20,11 +20,6 @@ setInterval(() => {
 
 }, 25);
 
-const hrButton = document.querySelector("input[id=hr24]")
-hrButton.onclick = () => {
-    if (hrButton.checked == "true") document.querySelector(".box").classList.remove("hr24");
-    else document.querySelector(".box").classList.add("hr24");
-}
 window.onload = () => {
     cument.documentElement.requestFullscreen();
 }
