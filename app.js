@@ -21,5 +21,5 @@ setInterval(() => {
 }, 25);
 
 window.onload = () => {
-    cument.documentElement.requestFullscreen();
+    document.documentElement.requestFullscreen();
 }
